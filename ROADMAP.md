@@ -21,3 +21,5 @@
   ├─ Setup database, use mongoose and connect the URI
   ├─ /Client
   ├─ Update Register page. add Register Form
+  ├─ Complete Register Form, wire-up state, style w/ bootstrap
+  ├─ 
