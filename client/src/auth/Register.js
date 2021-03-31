@@ -1,5 +1,7 @@
 import React, { Fragment, useState } from 'react';
+import axios from 'axios';
 import RegisterForm from '../components/RegisterForm';
+
 
 const Register = () => {
 	// create state for name, email and pw
@@ -8,9 +10,19 @@ const Register = () => {
 	const [pword, setPword] = useState('');
 
 	// create handleSubmit fn
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
-		console.table({ name, email, pword });
+		// console.table({ name, email, pword });
+		try {
+      const res = await axios.post('http://localhost:8000/api/register', {
+				name,
+				email,
+				pword
+			});
+			console.log('REGISTER USER → ', res);
+    } catch (err) {
+      console.log(err);
+    }
 	};
 	return (
 		<Fragment>

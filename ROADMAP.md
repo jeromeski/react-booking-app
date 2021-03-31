@@ -23,4 +23,5 @@
   ├─ Update Register page. add Register Form
   ├─ Complete Register Form, wire-up state, style w/ bootstrap
   ├─ create new component for RegisterForm, passdown state
-  ├─ 
+  ├─ Setup axios package use it on handleSubmit
+  
