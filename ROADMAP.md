@@ -22,4 +22,5 @@
   ├─ /Client
   ├─ Update Register page. add Register Form
   ├─ Complete Register Form, wire-up state, style w/ bootstrap
+  ├─ create new component for RegisterForm, passdown state
   ├─ 
