@@ -1,9 +1,16 @@
 // const express = require('express');
 import express from 'express';
 import { readdirSync } from 'fs';
+const morgan = require('morgan');
 require('dotenv').config();
 
 const app = express();
+
+// middlewares
+/** 
+  *morgan running in dev mode
+*/
+app.use(morgan('dev'));
 
 // route midlleware
 /**
