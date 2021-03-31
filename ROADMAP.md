@@ -1,5 +1,7 @@
 ###### Roadmap
-  ├─ Create project folder, integrate Git, install CRA, add Bootstrap as dep
+  ├─ Create project client and server folders, integrate Git, 
+  ├─ /Client
+  │     └─ Install CRA in /client, add Bootstrap as dep     
   ├─ Implement Routing, install react-router-dom dep
   │     ├─ Create Register Page and config routing
   │     └─ Create Login Page and config routing
@@ -7,4 +9,7 @@
   ├─ Initialize Global State
   │     ├─ Install redux and react-redux
   │     └─ Modify index.js to implement redux and react-redux initial configs
-  ├─ 
+  ├─ /Server
+  │     └─ Install express morgan mongoose nodemon dotenv cors
+  ├─ Initialize and configure express and test routes.
+  
