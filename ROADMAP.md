@@ -15,3 +15,4 @@
   ├─ Install esm (import/export) package module - test
   ├─ Modularize test route to /routes/auth.js
   ├─ Create autoload script for all routes.
+  ├─ Further refactoring: Create /controllers/auth.js
