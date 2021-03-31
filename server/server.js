@@ -1,12 +1,11 @@
 // const express = require('express');
-
 import express from 'express';
+import router from './routes/auth';
 
 const app = express();
 
-app.get('/api/:message', (req, res) => {
-	res.status(200).send(req.params.message);
-});
+// route midlleware
+app.use('/api', router);
 
 const PORT = process.env.PORT || 8000;
 
