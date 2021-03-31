@@ -14,3 +14,4 @@
   ├─ Initialize and configure express and test routes.
   ├─ Install esm (import/export) package module - test
   ├─ Modularize test route to /routes/auth.js
+  ├─ Create autoload script for all routes.
