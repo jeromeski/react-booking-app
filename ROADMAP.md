@@ -17,4 +17,7 @@
   ├─ Create autoload script for all routes.
   ├─ Further refactoring: Create /controllers/auth.js
   ├─ Creating .env file, using PORT=8000 as env variable.
-  ├─ Use Morgan
+  ├─ Use Morgan middleware
+  ├─ Setup database, use mongoose and connect the URI
+  ├─ /Client
+  ├─ Update Register page. add Register Form
