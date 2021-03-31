@@ -1,6 +1,7 @@
 // const express = require('express');
 import express from 'express';
-import fs from 'fs';
+import { readdirSync } from 'fs';
+require('dotenv').config();
 
 const app = express();
 
@@ -10,7 +11,7 @@ const app = express();
   * @param string './routes
   * @return nothing is returned. forEach is used as sideEffects
 */
-fs.readdirSync('./routes').forEach((r) => app.use('/api', require(`./routes/${r}`)));
+readdirSync('./routes').forEach((r) => app.use('/api', require(`./routes/${r}`)));
 
 const PORT = process.env.PORT || 8000;
 

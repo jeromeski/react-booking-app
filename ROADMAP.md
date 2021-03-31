@@ -16,3 +16,4 @@
   ├─ Modularize test route to /routes/auth.js
   ├─ Create autoload script for all routes.
   ├─ Further refactoring: Create /controllers/auth.js
+  ├─ Creating .env file, using PORT=8000 as env variable.
