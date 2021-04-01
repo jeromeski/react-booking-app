@@ -1,27 +1,40 @@
 ###### Roadmap
   ├─ Create project client and server folders, integrate Git, 
   ├─ /Client
-  │     └─ Install CRA in /client, add Bootstrap as dep     
-  ├─ Implement Routing, install react-router-dom dep
-  │     ├─ Create Register Page and config routing
-  │     └─ Create Login Page and config routing
-  ├─ Create TopNavigation Bar and add Links
-  ├─ Initialize Global State
-  │     ├─ Install redux and react-redux
-  │     └─ Modify index.js to implement redux and react-redux initial configs
+  │    ├─ Install CRA in /client, add Bootstrap as dep     
+  │    ├─ Implement Routing, install react-router-dom dep
+  │    │    ├─ Create Register Page and config routing
+  │    │    └─ Create Login Page and config routing
+  │    ├─ Create TopNavigation Bar and add Links
+  │    └─ Initialize Global State
+  │         ├─ Install redux and react-redux
+  │         └─ Modify index.js to implement redux and react-redux initial configs
   ├─ /Server
-  │     └─ Install express morgan mongoose nodemon dotenv cors
-  ├─ Initialize and configure express and test routes.
-  ├─ Install esm (import/export) package module - test
-  ├─ Modularize test route to /routes/auth.js
-  ├─ Create autoload script for all routes.
-  ├─ Further refactoring: Create /controllers/auth.js
-  ├─ Creating .env file, using PORT=8000 as env variable.
-  ├─ Use Morgan middleware
-  ├─ Setup database, use mongoose and connect the URI
+  │    ├─ Initialize and configure express and test routes.
+  │    │     └─ Install express morgan mongoose nodemon dotenv cors
+  │    ├─ Install esm (import/export) package module - test
+  │    ├─ Modularize test route to /routes/auth.js
+  │    ├─ Create autoload script for all routes.
+  │    ├─ Further refactoring: Create /controllers/auth.js
+  │    ├─ Creating .env file, using PORT=8000 as env variable.
+  │    ├─ Use Morgan middleware
+  │    └─ Initialize mongoose and connect the URI
   ├─ /Client
-  ├─ Update Register page. add Register Form
-  ├─ Complete Register Form, wire-up state, style w/ bootstrap
-  ├─ create new component for RegisterForm, passdown state
-  ├─ Setup axios package use it on handleSubmit
-  
+  │    ├─ Update Register page. add Register Form
+  │    ├─ Complete Register Form, wire-up state, style w/ bootstrap
+  │    ├─ create new component for RegisterForm, passdown state
+  │    └─ Setup axios package use it on handleSubmit
+  ├─ /Server
+  │    ├─ Register endpoint and json middleware.
+  │    ├─ Create /models. Setup mongoDB schema for name, email & pw, w/ option timestamp
+  │    ├─ Hash the password
+  │    │    └─ use pre function and bcrypt package
+  │
+  │
+  │
+  │         
+
+#### POSSIBLE ISSUES
+• you get no data/undefine - to fix this make sure to use body-parser or use express.json()
+• you get CORS error - to fix this make sure you have cors applied in server.js app.use(cors());
+

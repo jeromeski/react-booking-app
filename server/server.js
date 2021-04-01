@@ -16,6 +16,8 @@ mongoose
 
 // middlewares
 app.use(cors());
+// equivalent to body-parser
+app.use(express.json());
 /** 
   *morgan running in dev mode
 */
