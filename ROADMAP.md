@@ -29,7 +29,7 @@
   │    ├─ Create /models. Setup mongoDB schema for name, email & pw, w/ option timestamp
   │    ├─ Hash the password
   │    │    └─ use pre function and bcrypt package
-  │
+  │    ├─ Code saving the user
   │
   │
   │         

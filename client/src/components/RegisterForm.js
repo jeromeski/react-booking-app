@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RegisterForm = ({ handleSubmit, name, setName, email, setEmail, pword, setPword }) => {
+const RegisterForm = ({ handleSubmit, name, setName, email, setEmail, password, setPword }) => {
 	return (
 		<form onSubmit={handleSubmit} className='mt-3'>
 			<div className='form-group mb-3'>
@@ -28,7 +28,7 @@ const RegisterForm = ({ handleSubmit, name, setName, email, setEmail, pword, set
 				<input
 					type='password'
 					className='form-control'
-					value={pword}
+					value={password}
 					onChange={(e) => setPword(e.target.value)}
 					placeholder='Enter Password'
 				/>
