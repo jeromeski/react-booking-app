@@ -39,10 +39,31 @@
   │    ├─ create .env file and refactor register api url to env
   │    ├─ move and separate api call in Register to actions folder
   │    ├─ create Login page, and Loginform in separate files
-  │    ├─ code initial logic of handleSubmit for login  
+  │    └─ code initial logic of handleSubmit for login  
+  ├─ /Server
+  │    ├─ 
+  ├─  
+  │
+
+
+
+
+
+
+
+
 
 #### POSSIBLE ISSUES
 • you get no data/undefine - to fix this make sure to use body-parser or use express.json()
 • you get CORS error - to fix this make sure you have cors applied in server.js app.use
 (cors());
+
+#### HOW LOGIN WORKS
+1. Find the user by email in db.
+2. Compare that user's pw (hashed) with incoming password.
+      └─ middleware function in user model, that compares incoming pw hashed and pw db hashed.
+3. If pw match user login success.
+4. respond to frontend with JWT.
+5. JWT is configured with expiry
+6. User is allowed to perform certain actions like posting a new hotel for booking.
 
