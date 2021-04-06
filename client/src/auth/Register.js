@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react';
 import axios from 'axios';
 import RegisterForm from '../components/RegisterForm';
 import { toast } from 'react-toastify';
+import { register } from '../actions/auth';
 
 
 
@@ -16,11 +17,7 @@ const Register = ({history}) => {
 		e.preventDefault();
 		// console.table({ name, email, pword });
 		try {
-      const res = await axios.post(`${process.env.REACT_APP_API}/register`, {
-				name,
-				email,
-				password
-			});
+      const res = await register();
 			console.log('REGISTER USER → ', res);
       history.push('/login');
       toast.success('Register success! Please login');
