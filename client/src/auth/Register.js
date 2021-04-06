@@ -1,12 +1,9 @@
 import React, { Fragment, useState } from 'react';
-import axios from 'axios';
 import RegisterForm from '../components/RegisterForm';
 import { toast } from 'react-toastify';
 import { register } from '../actions/auth';
 
-
-
-const Register = ({history}) => {
+const Register = ({ history }) => {
 	// create state for name, email and pw
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
@@ -17,17 +14,17 @@ const Register = ({history}) => {
 		e.preventDefault();
 		// console.table({ name, email, pword });
 		try {
-      const res = await register({
+			const res = await register({
 				name,
 				email,
 				password
 			});
 			console.log('REGISTER USER → ', res);
-      history.push('/login');
-      toast.success('Register success! Please login');
-    } catch (err) {
-      if (err.response.status === 400) toast.error(err.response.data);
-    }
+			history.push('/login');
+			toast.success('Register success! Please login');
+		} catch (err) {
+			if (err.response.status === 400) toast.error(err.response.data);
+		}
 	};
 	return (
 		<Fragment>

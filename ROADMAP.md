@@ -38,7 +38,8 @@
   │    ├─ redirect user to login if success using history prop
   │    ├─ create .env file and refactor register api url to env
   │    ├─ move and separate api call in Register to actions folder
-  │    ├─   
+  │    ├─ create Login page, and Loginform in separate files
+  │    ├─ code initial logic of handleSubmit for login  
 
 #### POSSIBLE ISSUES
 • you get no data/undefine - to fix this make sure to use body-parser or use express.json()

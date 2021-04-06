@@ -7,8 +7,8 @@ import LoginForm from '../components/LoginForm';
 
 const Login = () => {
 	// create state for email and pw
-	const [email, setEmail] = useState('');
-	const [password, setPword] = useState('');
+	const [email, setEmail] = useState('admin@email.com');
+	const [password, setPword] = useState('password');
 
 	// create handleSubmit fn
 	const handleSubmit = async (e) => {
@@ -19,8 +19,11 @@ const Login = () => {
 				email,
 				password
 			});
-			console.log('REGISTER USER → ', res);
-			toast.success('Login Success!');
+			console.log('LOGIN RESPONSE → ', res);
+			if (res.data) {
+				console.log('SAVE USER RES IN REDUX AND LOCAL STORAGE THEN REDIRECT ==>');
+				console.log(res.data);
+			}
 		} catch (err) {
 			if (err.response.status === 400) toast.error(err.response.data);
 		}
