@@ -33,12 +33,15 @@
   │    │    └─ use pre function and bcrypt package
   │    └─ Save the user to database, taking to account error handling.
   ├─ /Client
-  │    ├─ update error handling in register
+  │    ├─ update error handling in Register.js
   │    ├─ use react react-toastify to show reg success or fail        
   │    ├─ redirect user to login if success using history prop
   │    ├─ create .env file and refactor register api url to env
+  │    ├─ move and separate api call in Register to actions folder
+  │    ├─   
 
 #### POSSIBLE ISSUES
 • you get no data/undefine - to fix this make sure to use body-parser or use express.json()
-• you get CORS error - to fix this make sure you have cors applied in server.js app.use(cors());
+• you get CORS error - to fix this make sure you have cors applied in server.js app.use
+(cors());
 
