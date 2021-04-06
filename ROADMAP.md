@@ -25,14 +25,18 @@
   │    ├─ create new component for RegisterForm, passdown state
   │    └─ Setup axios package use it on handleSubmit
   ├─ /Server
-  │    ├─ Register endpoint and json middleware.
+  │    Registering User    
+  │    ├─ Register route endpoints and express.json middleware.
+  │    ├─ Create controller method for user registration.
   │    ├─ Create /models. Setup mongoDB schema for name, email & pw, w/ option timestamp
   │    ├─ Hash the password
   │    │    └─ use pre function and bcrypt package
-  │    ├─ Code saving the user
-  │
-  │
-  │         
+  │    └─ Save the user to database, taking to account error handling.
+  ├─ /Client
+  │    ├─ update error handling in register
+  │    ├─ use react react-toastify to show reg success or fail        
+  │    ├─ redirect user to login if success using history prop
+  │    ├─ create .env file and refactor register api url to env
 
 #### POSSIBLE ISSUES
 • you get no data/undefine - to fix this make sure to use body-parser or use express.json()

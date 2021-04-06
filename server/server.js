@@ -27,7 +27,7 @@ app.use(morgan('dev'));
 /**
   * @desc auto loads all routes from the /routes folder
   * @param string './routes
-  * @return nothing is returned. forEach is used as sideEffects
+  * @return  forEach is used as sideEffect
 */
 readdirSync('./routes').forEach((r) => app.use('/api', require(`./routes/${r}`)));
 

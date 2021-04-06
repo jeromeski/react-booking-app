@@ -1,8 +1,5 @@
 import User from '../models/user';
 
-export const showMessage = (req, res) => {
-	res.status(200).send(req.params.message);
-};
 
 export const registerUser = async (req, res) => {
 	console.log(req.body);
@@ -10,10 +7,13 @@ export const registerUser = async (req, res) => {
 	// validation
 	if (!name) return res.status(400).send('Name is required');
 	if (!password || password.length < 6)
-		return res.status(400).send('Password is required and should be min 6 characters');
-	let userExist = User.findOne({ email }).exec();
-	// let userExist = await User.findOne({ email }).exec();
-	if (userExist) return res.status(400).send('Email is taken');
+		return res
+    .status(400)
+    .send('Password is required and should be min 6 characters');
+
+  let userExist = await User.findOne({ email }).exec();
+  if (userExist) return res.status(400).send('Email is taken');
+
 	// register user
 	const user = new User(req.body);
 	try {
@@ -24,4 +24,14 @@ export const registerUser = async (req, res) => {
 		console.log('CREATE USER FAILED ', err);
 		return res.status(400).send('Error. Try Again');
 	}
+
+	/*
+	User.findOne({ email }, (err, result) => {
+		if (err) {
+			res.status(400).send('Error, Registration failed');
+		} else {
+			res.status(400).send('Email is Taken');
+		}
+	});
+  */
 };
