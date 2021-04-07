@@ -1,4 +1,4 @@
-export const userReducer = (state = { name: 'Ryan', role: 'Seller' }, action) => {
+export const userReducer = (state = {}, action) => {
 	switch (action.type) {
 		case 'LOGGED_IN_USER':
 			return { ...state, ...action.payload };

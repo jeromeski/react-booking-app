@@ -3,7 +3,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { userReducer } from './auth';
 
 const rootReducer = combineReducers({
-	user: userReducer
+	auth: userReducer
 });
 
 const middleware = [];
