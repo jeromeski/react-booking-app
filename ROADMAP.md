@@ -45,9 +45,9 @@
   │    │     └─ mongoose methods.comparePassword and bcrypt
   │    ├─ Create login route 
   │    ├─ Create login controller
-  │    │
-  │    │
-  │    │
+  │    │     ├─ Lookup user
+  │    │     ├─ Compare password and send appropriate error or success response
+  │    │     └─ Generate token and send a res to client - jsonwebtoken npm
   ├─  
   │
 

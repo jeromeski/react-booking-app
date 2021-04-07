@@ -1,5 +1,5 @@
 import User from '../models/user';
-
+import jwt from 'jsonwebtoken';
 
 export const registerUser = async (req, res) => {
 	console.log(req.body);
@@ -49,7 +49,19 @@ export const loginUser = async (req, res) => {
 			console.log('COMPARE PW IN LOGIN ERR', err);
 			if (!match || err) return res.status(400).send('Wrong Password!');
 			// generate token
-			console.log('GENERATE A TOKEN THEN SEND AS RESPONSE TO CLIENT');
+			let token = jwt.sign({ _id: user.id }, process.env.JWT_SECRET, {
+				expiresIn: '7d'
+			});
+			res.json({
+				token,
+				user: {
+					_id: user.id,
+					name: user.name,
+					email: user.email,
+					createdAt: user.createdAt,
+					updatedAt: user.updatedAt
+				}
+			});
 		});
 	} catch (err) {
 		console.log('Login Error ', err);
