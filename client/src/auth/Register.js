@@ -40,7 +40,7 @@ const Register = ({ history }) => {
 							setName={setName}
 							email={email}
 							setEmail={setEmail}
-							pword={password}
+							password={password}
 							setPword={setPword}
 						/>
 					</div>

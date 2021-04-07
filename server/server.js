@@ -16,12 +16,15 @@ mongoose
 
 // middlewares
 app.use(cors());
-// equivalent to body-parser
-app.use(express.json());
+
 /** 
   *morgan running in dev mode
 */
 app.use(morgan('dev'));
+
+// equivalent to body-parser
+app.use(express.json());
+
 
 // route midlleware
 /**
@@ -29,7 +32,7 @@ app.use(morgan('dev'));
   * @param string './routes
   * @return  forEach is used as sideEffect
 */
-readdirSync('./routes').forEach((r) => app.use('/api', require(`./routes/${r}`)));
+readdirSync('./routes').map((r) => app.use('/api', require(`./routes/${r}`)));
 
 const PORT = process.env.PORT || 8000;
 

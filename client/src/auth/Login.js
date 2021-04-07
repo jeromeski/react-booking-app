@@ -7,13 +7,12 @@ import LoginForm from '../components/LoginForm';
 
 const Login = () => {
 	// create state for email and pw
-	const [email, setEmail] = useState('admin@email.com');
-	const [password, setPword] = useState('password');
+	const [email, setEmail] = useState('');
+	const [password, setPword] = useState('');
 
 	// create handleSubmit fn
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-
 		try {
 			const res = await login({
 				email,
@@ -40,7 +39,7 @@ const Login = () => {
 							handleSubmit={handleSubmit}
 							email={email}
 							setEmail={setEmail}
-							pword={password}
+							password={password}
 							setPword={setPword}
 						/>
 					</div>

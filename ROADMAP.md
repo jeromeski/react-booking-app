@@ -41,7 +41,13 @@
   │    ├─ create Login page, and Loginform in separate files
   │    └─ code initial logic of handleSubmit for login  
   ├─ /Server
-  │    ├─ 
+  │    ├─ Compare password from frontend and db using 
+  │    │     └─ mongoose methods.comparePassword and bcrypt
+  │    ├─ Create login route 
+  │    ├─ Create login controller
+  │    │
+  │    │
+  │    │
   ├─  
   │
 

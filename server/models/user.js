@@ -10,7 +10,7 @@ const userSchema = new Schema(
 			trim: true,
 			required: 'Name is required'
 		},
-		name: {
+		email: {
 			type: String,
 			trim: true,
 			required: 'Email is required',
@@ -61,7 +61,7 @@ userSchema.pre('save', function (next) {
 	}
 });
 //                                             cb fn ↓
-userSchema.methods.comparePassword = function (err, next) {
+userSchema.methods.comparePassword = function (password, next) {
 	//       frontend  ↓         db ↓                   results
 	bcrypt.compare(password, this.password, function (err, match) {
 		if (err) {
