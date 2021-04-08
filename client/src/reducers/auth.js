@@ -1,4 +1,12 @@
-export const userReducer = (state = {}, action) => {
+let useState;
+
+if (window.localStorage.getItem('auth')) {
+	useState = JSON.parse(window.localStorage.getItem('auth'));
+} else {
+	useState = null;
+}
+
+export const userReducer = (state = useState, action) => {
 	switch (action.type) {
 		case 'LOGGED_IN_USER':
 			return { ...state, ...action.payload };

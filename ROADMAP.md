@@ -51,10 +51,12 @@
   ├─ /Client 
   │    ├─ Save user and token to local storage
   │    ├─ Save user and token to redux
-
-
-
-
+  │    ├─ Make initial state use token
+  │    ├─ Code logic in Topnav
+  │    │     ├─ useDispatch hook - react-redux
+  │    │     ├─ useSelector hook - react-redux
+  │    │     ├─ redirect customers using useHistory hook;
+  │    │     └─ Code conditional rendering of links
 
 
 
