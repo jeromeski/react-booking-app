@@ -57,8 +57,8 @@
   │    │     ├─ useSelector hook - react-redux
   │    │     ├─ redirect customers using useHistory hook;
   │    │     └─ Code conditional rendering of links
-
-
+  │    ├─ Create PrivateRoute Component for secure routing.
+  │    ├─ Create Dashboard Component
 
 
 #### POSSIBLE ISSUES
