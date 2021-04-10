@@ -1,28 +1,40 @@
-import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
-import Login from './auth/Login';
-import Register from './auth/Register';
-import Home from './booking/Home';
-import TopNav from './components/TopNav';
+// import those pages in App.js
+// then based on the path show each components using react-router components
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import TopNav from "./components/TopNav";
+import PrivateRoute from "./components/PrivateRoute";
+// components
+import Home from "./booking/Home";
+import Login from "./auth/Login";
+import Register from "./auth/Register";
+import Dashboard from "./user/Dashboard";
+import DashboardSeller from "./user/DashboardSeller";
 
-import 'react-toastify/dist/ReactToastify.css';
-import PrivateRoute from './components/PrivateRoute';
-import Dashboard from './user/Dashboard';
+/**
+ * Lets create TopNavigation/menu bar so that we can easily TopNavigate between pages
+ * lets write it in App.js before we move it to its own component
+ */
 
-const App = () => {
-	return (
-		<BrowserRouter>
-			<TopNav />
-			<ToastContainer />
-			<Switch>
-				<Route exact path='/' component={Home} />
-				<Route exact path='/login' component={Login} />
-				<Route exact path='/register' component={Register} />
-				<PrivateRoute exact path='/dashboard' component={Dashboard} />
-			</Switch>
-		</BrowserRouter>
-	);
-};
+function App() {
+  return (
+    <BrowserRouter>
+      <TopNav />
+      <ToastContainer position="top-center" />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/register" component={Register} />
+        <PrivateRoute exact path="/dashboard" component={Dashboard} />
+        <PrivateRoute
+          exact
+          path="/dashboard/seller"
+          component={DashboardSeller}
+        />
+      </Switch>
+    </BrowserRouter>
+  );
+}
 
 export default App;

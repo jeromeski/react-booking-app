@@ -1,10 +1,8 @@
-import { applyMiddleware, combineReducers, createStore } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import { userReducer } from './auth';
+import { combineReducers } from "redux";
+import { authReducer } from "./auth";
 
 const rootReducer = combineReducers({
-	auth: userReducer
+  auth: authReducer,
 });
 
-const middleware = [];
-export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(...middleware)));
+export default rootReducer;
