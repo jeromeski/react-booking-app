@@ -6,12 +6,10 @@ import moment from 'moment';
 const {Meta} = Card;
 
 const ConnectNav = () => {
-  const {auth} = useSelector((state) => ({...state}));
-  const {user} = auth;
+	const { auth } = useSelector((state) => ({ ...state }));
+	const { user } = auth;
 
-  console.log(user)
-  
-  return (
+	return (
 		<div className='d-flex justify-content-around'>
 			<Card>
 				<Meta
@@ -21,11 +19,11 @@ const ConnectNav = () => {
 				/>
 			</Card>
 			{auth && auth.user && auth.user.stripe_seller && auth.user.stripe_seller.charges_enabled && (
-        <Fragment>
-          <div>Pending Balance</div>
-          <div>Payout Settings</div>
-        </Fragment>
-      )}
+				<Fragment>
+					<div>Pending Balance</div>
+					<div>Payout Settings</div>
+				</Fragment>
+			)}
 		</div>
 	);
 }
