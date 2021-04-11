@@ -2,6 +2,7 @@ import DashboardNav from "../components/DashboardNav";
 import ConnectNav from "../components/ConnectNav";
 import {useSelector} from 'react-redux';
 import { Link } from "react-router-dom";
+import { HomeOutlined } from '@ant-design/icons';
 import { Fragment } from 'react';
 
 const DashboardSeller = () => {
@@ -24,8 +25,24 @@ const DashboardSeller = () => {
 	);
 
   const notConnected = () => (
-    <h1>Connect with stripe</h1>
-  )
+		<div className='container-fluid'>
+			<div className='row'>
+				<div className='col-md-6'>
+					<div className='p-5 pointer text-center'>
+						<HomeOutlined className='h1' />
+						<h4>Setup payouts to post hotel rooms</h4>
+						<p className='lead'>
+							MERN partners with stripe to transfer your earnings to your bank account.
+						</p>
+						<button className='btn btn-primary mb-3'>Setup Payouts</button>
+						<p className='text-muted'>
+							<small>Youll be redirected to Stripe to complete the onboarding process</small>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	);
   return (
     <Fragment>
       <div className="container-fluid bg-secondary p-5">
