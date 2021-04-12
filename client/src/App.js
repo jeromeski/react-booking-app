@@ -12,6 +12,7 @@ import Register from "./auth/Register";
 import Dashboard from "./user/Dashboard";
 import DashboardSeller from "./user/DashboardSeller";
 import NewHotel from './hotels/NewHotel';
+import StripeCallback from './stripe/StripeCallback';
 
 /**
  * Lets create TopNavigation/menu bar so that we can easily TopNavigate between pages
@@ -30,6 +31,7 @@ function App() {
 				<PrivateRoute exact path='/dashboard' component={Dashboard} />
 				<PrivateRoute exact path='/dashboard/seller' component={DashboardSeller} />
 				<PrivateRoute exact path='/new/seller' component={NewHotel} />
+				<PrivateRoute exact path='/stripe/callback' component={StripeCallback} />
 			</Switch>
 		</BrowserRouter>
 	);
