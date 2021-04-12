@@ -48,7 +48,7 @@ const Login = ({ history }) => {
 							email={email}
 							setEmail={setEmail}
 							password={password}
-							setPword={setPassword}
+							setPassword={setPassword}
 						/>
 					</div>
 				</div>
