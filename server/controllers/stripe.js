@@ -52,5 +52,6 @@ export const getAccountStatus = async (req, res) => {
 		.select('-password')
 		.exec();
 	// console.log(updatedUser);
+	// send data to client
 	res.json(updatedUser);
 };
