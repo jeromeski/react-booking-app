@@ -1,24 +1,35 @@
 import { LoadingOutlined } from '@ant-design/icons';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { updateUserInLocalStorage } from '../actions/auth';
 import { getAccountStatus } from '../actions/stripe';
 
-const StripeCallback = ({ history }) => {
-    const { auth } = useSelector((state) => ({ ...state }));
-		const dispatch = useDispatch();
+const StripeCallback = () => {
+	const { auth } = useSelector((state) => ({ ...state }));
+	const dispatch = useDispatch();
 
-		useEffect(() => {
-			if (auth && auth.user) accountStatus();
-		}, [auth]);
+	useEffect(() => {
+		if (auth && auth.user) accountStatus();
+	}, [auth]);
 
-		const accountStatus = async () => {
-			try {
-				const res = await getAccountStatus(auth.token);
-				console.log('User account status in stripe callback ', res);
-			} catch (err) {
-				console.log(err);
-			}
-		};
+	const accountStatus = async () => {
+		try {
+			const res = await getAccountStatus(auth.token);
+			// console.log('USER ACCOUNT STATUS ON STRIPE CALLBACK', res)
+			// update user in local storage
+			updateUserInLocalStorage(res.data, () => {
+				// update user in redux
+				dispatch({
+					type: 'LOGGED_IN_USER',
+					payload: res.data
+				});
+				// redirect user to dashboard
+				window.location.href = '/dashboard/seller';
+			});
+		} catch (err) {
+			console.log(err);
+		}
+	};
 
 	return (
 		<div className='d-flex justify-content-center p-5'>
