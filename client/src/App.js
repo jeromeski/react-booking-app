@@ -30,7 +30,7 @@ function App() {
 				<Route exact path='/register' component={Register} />
 				<PrivateRoute exact path='/dashboard' component={Dashboard} />
 				<PrivateRoute exact path='/dashboard/seller' component={DashboardSeller} />
-				<PrivateRoute exact path='/new/seller' component={NewHotel} />
+				<PrivateRoute exact path='/hotels/new' component={NewHotel} />
 				<PrivateRoute exact path='/stripe/callback' component={StripeCallback} />
 			</Switch>
 		</BrowserRouter>

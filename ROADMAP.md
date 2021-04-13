@@ -60,7 +60,14 @@
   │    ├─ Create PrivateRoute Component for secure routing.
   │    ├─ Create Dashboard Component
   │    │      ├─
-  │    │  
+  │    │
+
+
+
+#### STRIPE
+• allow users to access their account
+• view balance etc.
+  
 
 #### POSSIBLE ISSUES
 • you get no data/undefine - to fix this make sure to use body-parser or use express.json()
