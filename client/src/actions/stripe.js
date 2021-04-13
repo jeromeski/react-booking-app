@@ -40,7 +40,7 @@ export const currencyFormatter = (data) => {
 	});
 };
 
-export const payoutSettings = async (token) =>
+export const payoutSetting = async (token) =>
 	axios.post(
 		`${process.env.REACT_APP_API}/payout-setting`,
 		{},
