@@ -3,14 +3,30 @@ import {useSelector} from 'react-redux';
 import {Card, Avatar} from 'antd';
 import moment from 'moment';
 import Ribbon from 'antd/lib/badge/Ribbon';
-import { currencyFormatter, getAccountBalance } from '../actions/stripe';
+import { currencyFormatter, getAccountBalance, payoutSettings } from '../actions/stripe';
+import { SettingOutlined } from '@ant-design/icons';
+import {toast} from 'react-toastify';
 
 const {Meta} = Card;
 
 const ConnectNav = () => {
-  const [balance, setBalance] = useState(0)
+  const [balance, setBalance] = useState(0);
+  const [loading, setLoading] = useState(false)
 	const { auth } = useSelector((state) => ({ ...state }));
-	const { user } = auth;
+	const { user, token } = auth;
+
+  const handlePayoutSettings = async () => {
+    setLoading(true);
+    try {
+      const res = await payoutSettings(token)
+      console.log('RES FOR PAYOUT SETTING LINK', res);
+      // window.location.href = res.data
+    } catch (err) {
+      console.log(err);
+      setLoading(false);
+      toast('Unable to access settings. Try again')
+    }
+  }
 
   useEffect(() => {
     getAccountBalance(auth.token).then((res) => {
@@ -18,7 +34,6 @@ const ConnectNav = () => {
       setBalance(res.data)
     })
   },[])
-
 
 	return (
 		<div className='d-flex justify-content-around'>
@@ -42,7 +57,11 @@ const ConnectNav = () => {
 								))}
 						</Card>
 					</Ribbon>
-					<div>Payout Settings</div>
+					<Ribbon text='Payout' color='silver'>
+						<Card onClick={handlePayoutSettings} className='bg-light pointer'>
+							<SettingOutlined className='h5 pt-2' />
+						</Card>
+					</Ribbon>
 				</Fragment>
 			)}
 		</div>

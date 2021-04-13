@@ -39,3 +39,14 @@ export const currencyFormatter = (data) => {
 		currency: data.currency
 	});
 };
+
+export const payoutSettings = async (token) =>
+	axios.post(
+		`${process.env.REACT_APP_API}/payout-setting`,
+		{},
+		{
+			headers: {
+				Authorization: `Bearer ${token}`
+			}
+		}
+	);
